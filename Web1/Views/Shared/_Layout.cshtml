@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="menu">
+                <a class="logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="logo__image" src="~/images/github-logo.svg" />
+                    <h1 class="logo__text">Horizon Search</h1>
+                </a>
+                <ul class="menu__items">
+                    <li class="menu__item">
+                        <a class="menu__item-link" asp-area="" asp-controller="Home" asp-action="Index" style="--clr:#5851bd">
+                            <span>Home</span><i></i>
+                        </a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__item-link" asp-area="" asp-controller="Search" asp-action="Index" style="--clr:#5851bd">
+                            <span>Search repository</span><i></i>
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <main role="main" class="">
+        <div class="container">
+            @RenderBody()
+        </div>
+    </main>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__info">
+                <p class="footer__info-text">Powered by Bobko Anatoliy</p>
+                <ul class="footer__info-links">
+                    <li style="--clr:#d90f0f" class="footer__info-link">
+                        <i class="fa fa-youtube-play" aria-hidden="true">
+                        </i>
+                    </li>
+                    <li style="--clr:#ea0c5f" class="footer__info-link">
+                        <i class="fa fa-instagram" aria-hidden="true" ></i>
+                    </li>
+                    <li style="--clr:#1da1f2" class="footer__info-link">
+                        <i class="fa fa-twitter" aria-hidden="true"></i>
+                    </li>
+                    <li style="--clr:#25d366" class="footer__info-link">
+                        <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

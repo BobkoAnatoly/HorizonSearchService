@@ -1,0 +1,107 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+.menu {
+    display: flex;
+    margin-top: 20px;
+}
+
+.logo {
+    color: black;
+    display: flex;
+    text-decoration: none;
+    outline: none;
+    margin-right: 70px;
+}
+
+.logo__image {
+    width: 60px;
+    height: 60px;
+}
+
+.logo__text {
+    color: #410654;
+    display: block;
+    margin: auto 0px auto 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.footer__info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer__info-links {
+    display: flex;
+    position: relative;
+    gap: 20px;
+}
+
+
+.footer__info-text {
+    color: white;
+    font-size: 18px;
+    margin-right: 60px;
+}
+
+.footer__info-links .footer__info-link {
+    position: relative;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(0,0,0,0.25);
+}
+
+    .footer__info-links .footer__info-link .fa {
+        font-size: 2.5em;
+        -webkit-text-stroke: 2px var(--clr);
+        color: transparent;
+    }
+
+    .footer__info-links .footer__info-link::before {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 0;
+        border-bottom: 4px solid var(--clr);
+        transition: 0.5s ease-in-out;
+        font-family: fontAwesome;
+        text-align: center;
+        font-size: 2.5em;
+        color: var(--clr);
+        overflow: hidden;
+    }
+
+    .footer__info-links .footer__info-link:hover::before {
+        height: 100%;
+    }
+
+    .footer__info-links .footer__info-link:nth-child(1)::before {
+        content: '\f16a'
+    }
+
+    .footer__info-links .footer__info-link:nth-child(2)::before {
+        content: '\f16d';
+    }
+
+    .footer__info-links .footer__info-link:nth-child(3)::before {
+        content: '\f099';
+    }
+
+    .footer__info-links .footer__info-link:nth-child(4)::before {
+        content: '\f232';
+    }

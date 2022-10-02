@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, a, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: url(../images/bg.jpg)center no-repeat;
+    background-size: cover;
+}
+
+.menu {
+    display: flex;
+    margin-top: 20px;
+}
+
+.logo {
+    color: black;
+    display: flex;
+    text-decoration: none;
+    outline: none;
+    margin-right: 70px;
+}
+
+.logo__image {
+    width: 60px;
+    height: 60px;
+}
+
+.logo__text {
+    color: #410654;
+    display: block;
+    margin: auto 0px auto 10px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.findBtn {
+    display: inline-block;
+    margin-top: 50px;
+    position: relative;
+    background: white;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: 0.5s;
+}
+
+    .findBtn:hover {
+        background: #e6d5d5;
+        color: black;
+        letter-spacing: 0.18em;
+        box-shadow: 0 0 10px var(--clr);
+    }
+
+    .findBtn::before {
+        content: '';
+        position: absolute;
+        inset: 2px;
+        background: #817ade;
+    }
+
+    .findBtn span {
+        position: relative;
+        z-index: 1;
+    }
+
+    .findBtn i {
+        position: absolute;
+        inset: 0;
+        display: block;
+    }
+
+        .findBtn i:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            background: #817ade;
+            left: 80%;
+            width: 8px;
+            height: 5px;
+            transform: translateX(-50%) skewX(325deg);
+            transition: 0.5s;
+        }
+
+a:hover i:before {
+    width: 20px;
+    left: 20%;
+}
+
+.findBtn i::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    background: #817ade;
+    left: 20%;
+    width: 8px;
+    height: 6px;
+    transform: translateX(-50%) skewX(325deg);
+    transition: 0.5s;
+}
+
+a:hover i:after {
+    width: 20px;
+    left: 80%;
+}
+
+.menu__items {
+    margin-top: 4px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.menu__item .menu__item-link {
+    text-decoration: none;
+    display: block;
+    color: #410654;
+    font-size: 20px;
+    font-weight: 500;
+    margin-right: 40px;
+    transition: 0.2s;
+}
+
+.menu__item-link:hover {
+    border-bottom: solid;
+    border-color: #410654;
+    border-width: 2px;
+}
+
+.offer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+}
+
+.offer-image img {
+    width: 450px;
+    height: 450px;
+}
+
+.offer-text h1 {
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: -0.01em
+}
+
+.offer-text h2 {
+    margin-top: 30px;
+    font-size: 28px;
+    font-weight: 500;
+    font-style: italic
+}
+
+.offer-text {
+    padding-top: 30px;
+    max-width: 530px;
+}
