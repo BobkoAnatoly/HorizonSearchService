@@ -1,8 +1,75 @@
 ﻿
 <div class="main">
     <div class="container">
-        <form asp-action="">
-            <input type="search" value=""/>
+        <form class="form-body" asp-controller="Search" asp-action="Search" method="get">
+            <div class="form-body__filters">
+                <div class="sort-lang">
+                    <p class="sort-lang__text">
+                        Languages
+                    </p>
+                    <div class="sort-lang__results">
+                    </div>
+                </div>
+            </div>
+            <div class="form-body__main">
+                <div class="form-body__search-util">
+                    <div class="form-body__main-search">
+                        <div class="search-bar">
+                            <input class="serach-bar-text" placeholder="Search anything" type="text" name="q" />
+                            <button class="serach-bar-submit" type="submit">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-body__results-sort">
+                        <div class="select__header">
+                            <span class="select__header-text">Sort: </span>
+                            <span class="select__current">Наилучшее соответствие</span>
+                            <div class="select__icon">
+                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
+                            </div>
+                        </div>
+
+                        <div class="select__body">
+                            <button  class="select__item" value="">Наилучшее соответствие</button>
+                            <button type="submit" name="s" class="select__item" value="">Больше всего звёзд</button>
+                            <button type="submit" name="s" class="select__item" value="">Меньше всего звёзд</button>
+                            <button type="submit" name="s" class="select__item" value="">Больше всего копий</button>
+                            <button type="submit" name="s" class="select__item" value="">Меньше всего копий</button>
+                            <button type="submit" name="s" class="select__item" value="">Недавно обновлённые</button>
+                            <button type="submit" name="s" class="select__item" value="">Давно обновлённые</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-body__results-count">
+                    <h3>
+                        Найдено @{
+                        } доступных репозиториев.
+                    </h3>
+                </div>
+
+                <div class="form-body__results">
+
+                    <div class="form-body__result">
+                        <div class="form-body__result-ico">
+                        </div>
+                        <div class="form-body__result-body">
+                            <a class="result-body__result-link"></a>
+                            <p class="result-body__result-about"></p>
+                            <div class="form-body__result-info">
+                                <div class="result-info__stars">
+                                </div>
+                                <div class="result-info__lang">
+                                </div>
+                                <div class="result-info__update">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </form>
     </div>
 </div>

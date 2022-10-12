@@ -182,3 +182,137 @@ a:hover i:after {
     padding-top: 30px;
     max-width: 530px;
 }
+
+/*Search-begin*/
+
+.form-body {
+    display: flex;
+    padding-top: 40px;
+    gap: 20px;
+}
+
+.form-body__filters {
+    min-width: 27%;
+}
+
+/*Search-bar-begin*/
+
+.search-bar {
+    background: rgba(255,255,255,0.2);
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    width: 500px;
+}
+
+    .search-bar .serach-bar-text {
+        background: transparent;
+        flex: 1;
+        border: 0;
+        outline: none;
+        /*padding:5px 5px;*/
+        font-size: 20px;
+        color: black;
+    }
+
+::placeholder {
+    color: #cac7ff;
+}
+
+
+.search-bar .serach-bar-submit {
+    border: 0;
+    border-radius: 50px;
+    width: 50px;
+    height: 30px;
+    background: #58629b;
+    cursor: pointer;
+}
+
+/*Search-bar-end*/
+
+.form-body__search-util {
+    display: flex;
+    gap: 20px;
+}
+
+.form-body__results-count {
+    margin-top: 15px;
+}
+
+.sort-lang__text {
+    font-size: 18px;
+    padding: 12px;
+}
+
+.sort-lang {
+    border-radius: 30px;
+    background: rgba(103, 99, 99,0.5);
+}
+
+/*Select*/
+.form-body__results-sort {
+    position: relative;
+}
+
+    .form-body__results-sort.is-active .select__body {
+        display: block;
+    }
+
+.select__header {
+    border-radius: 30px;
+    padding: 13px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.2);
+}
+
+.select__current {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.select__icon {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    margin-left: auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.select__body {
+    background: #cccccc;
+    overflow: hidden;
+    border-radius: 20px;
+    border-top: 0;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+}
+
+.select__header-text {
+    font-size: 18px;
+    line-height: 24px;
+    color: #cccccc;
+}
+
+.select__item {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 8px 8px 8px 8px;
+    border: none;
+    border-bottom: 1px solid white;
+}
+
+    .select__item:hover {
+        background-color: #f2f2f2;
+    }
