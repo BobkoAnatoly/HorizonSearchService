@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web1\Web.csproj", "{8124834D-8048-4667-B0CC-A39B8E4868C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HorizonSearchPlatform.Server", "HorizonSearchPlatform.Server\HorizonSearchPlatform.Server.csproj", "{9345C859-68D0-47B2-86FC-DD1227C4B5CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HorizonSearchPlatform.Server", "HorizonSearchPlatform.Server\HorizonSearchPlatform.Server.csproj", "{9345C859-68D0-47B2-86FC-DD1227C4B5CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistence", "Persistence\Persistence.csproj", "{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{9345C859-68D0-47B2-86FC-DD1227C4B5CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9345C859-68D0-47B2-86FC-DD1227C4B5CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9345C859-68D0-47B2-86FC-DD1227C4B5CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{1AFF2601-9FFC-4E0B-A3DF-47C95AD1201F} = {0BD94E30-3329-413A-9678-474E6F8F56FF}
 		{CF54823D-8BD2-4C76-A6C9-0440D5DD3502} = {0BD94E30-3329-413A-9678-474E6F8F56FF}
 		{8124834D-8048-4667-B0CC-A39B8E4868C2} = {93AA92D2-31A2-488E-B351-B52F943CECEA}
+		{AD1D3FBF-B4C9-44C7-99CC-1C12D263F54E} = {0BD94E30-3329-413A-9678-474E6F8F56FF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F308DFD2-733B-4CB5-B7B8-9103B3F5DD1A}

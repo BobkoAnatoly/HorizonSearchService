@@ -1,7 +1,9 @@
-﻿
+﻿@model Persistence.Models.RepositoryModel
+
+
 <div class="main">
     <div class="container">
-        <form class="form-body" asp-controller="Search" asp-action="Search" method="get">
+        <form class="form-body" asp-controller="Search" asp-action="Index" method="get">
             <div class="form-body__filters">
                 <div class="sort-lang">
                     <p class="sort-lang__text">
@@ -15,7 +17,7 @@
                 <div class="form-body__search-util">
                     <div class="form-body__main-search">
                         <div class="search-bar">
-                            <input class="serach-bar-text" placeholder="Search anything" type="text" name="q" />
+                            <input class="serach-bar-text" asp-for="A" placeholder="Search anything" type="text"  />
                             <button class="serach-bar-submit" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -32,7 +34,10 @@
 
                         <div class="select__body">
                             <button class="select__item" value="">Наилучшее соответствие</button>
-                            <button type="submit" name="s" class="select__item" value="">Больше всего звёзд</button>
+                            <div>
+                            <input asp-for="B" type="text" class="select__item" value="Больше всего звёзд">
+                            <button type="submit">fwrqr</button>
+                            </div>
                             <button type="submit" name="s" class="select__item" value="">Меньше всего звёзд</button>
                             <button type="submit" name="s" class="select__item" value="">Больше всего копий</button>
                             <button type="submit" name="s" class="select__item" value="">Меньше всего копий</button>
