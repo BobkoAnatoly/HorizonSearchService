@@ -24,6 +24,7 @@ namespace HorizonSearchPlatform.Server
 
         public void Process(object client)
         {
+            
             NetworkStream stream = default;
             var _tcpClient = client as TcpClient;
             try

@@ -1,4 +1,4 @@
-﻿@model Persistence.Models.RepositoryModel
+﻿@model Persistence.Models.SearchModel
 
 
 <div class="main">
@@ -10,6 +10,11 @@
                         Languages
                     </p>
                     <div class="sort-lang__results">
+                        <input class="select__item" asp-for="l" type="submit" value="Phyton" />
+                        <input class="select__item" asp-for="l" type="submit" value="JavaScript" />
+                        <input class="select__item" asp-for="l" type="submit" value="Java" />
+                        <input class="select__item" asp-for="l" type="submit" value="HTML" />
+                        <input class="select__item" asp-for="l" type="submit" value="CSharp"/>
                     </div>
                 </div>
             </div>
@@ -17,33 +22,21 @@
                 <div class="form-body__search-util">
                     <div class="form-body__main-search">
                         <div class="search-bar">
-                            <input class="serach-bar-text" asp-for="A" placeholder="Search anything" type="text"  />
+                            <input class="serach-bar-text" asp-for="q" placeholder="Search anything" type="text" />
                             <button class="serach-bar-submit" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
                         </div>
                     </div>
                     <div class="form-body__results-sort">
-                        <div class="select__header">
-                            <span class="select__header-text">Sort: </span>
-                            <span class="select__current">Наилучшее соответствие</span>
-                            <div class="select__icon">
-                                <i class="fa fa-sort-desc" aria-hidden="true"></i>
-                            </div>
-                        </div>
-
-                        <div class="select__body">
-                            <button class="select__item" value="">Наилучшее соответствие</button>
-                            <div>
-                            <input asp-for="B" type="text" class="select__item" value="Больше всего звёзд">
-                            <button type="submit">fwrqr</button>
-                            </div>
-                            <button type="submit" name="s" class="select__item" value="">Меньше всего звёзд</button>
-                            <button type="submit" name="s" class="select__item" value="">Больше всего копий</button>
-                            <button type="submit" name="s" class="select__item" value="">Меньше всего копий</button>
-                            <button type="submit" name="s" class="select__item" value="">Недавно обновлённые</button>
-                            <button type="submit" name="s" class="select__item" value="">Давно обновлённые</button>
-                        </div>
+                        <span class="select__header-text">Sort:</span>
+                        <select asp-for="s" class="select__header">
+                            <option class="select__item" >Наилучшее соответствие</option>
+                            <option class="select__item">Больше всего звёзд</option>
+                            <option class="select__item">Меньше всего звёзд</option>
+                            <option class="select__item">Недавно обновлённые</option>
+                            <option class="select__item">Давно обновлённые</option>
+                        </select>
                     </div>
                 </div>
 

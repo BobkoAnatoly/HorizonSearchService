@@ -192,7 +192,7 @@ a:hover i:after {
 }
 
 .form-body__filters {
-    min-width: 27%;
+    min-width: 20%;
 }
 
 /*Search-bar-begin*/
@@ -244,16 +244,22 @@ a:hover i:after {
 .sort-lang__text {
     font-size: 18px;
     padding: 12px;
+    text-align: center;
+    font-weight:bold;
 }
 
 .sort-lang {
     border-radius: 30px;
-    background: rgba(103, 99, 99,0.5);
+    background: rgba(103, 99, 99,0.4);
+    overflow: hidden;
 }
 
 /*Select*/
 .form-body__results-sort {
     position: relative;
+    display:flex;
+    align-items:center;
+    gap:10px;
 }
 
     .form-body__results-sort.is-active .select__body {
@@ -261,12 +267,12 @@ a:hover i:after {
     }
 
 .select__header {
-    border-radius: 30px;
-    padding: 13px 20px;
+    outline:none;
+    border-radius: 10px;
+    padding: 13px;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 10px;
     background: rgba(255,255,255,0.2);
 }
 
@@ -293,6 +299,7 @@ a:hover i:after {
     display: none;
     position: absolute;
     right: 0;
+    width:100%;
     top: 100%;
 }
 
@@ -310,9 +317,13 @@ a:hover i:after {
     line-height: 24px;
     padding: 8px 8px 8px 8px;
     border: none;
-    border-bottom: 1px solid white;
+    transition: .5s;
 }
 
     .select__item:hover {
-        background-color: #f2f2f2;
+        background: rgba(255,255,255,0.2);
     }
+/*.select__item-wrap input {
+    visibility: hidden;
+    position: absolute;
+}*/
