@@ -1,11 +1,17 @@
-﻿using Persistence.Enums;
+﻿using Octokit;
+using Application.Enums;
 
-namespace Persistence.Models
+namespace Application.Models
 {
     public class SearchRequest
     {
         public string SearchText { get; set; }
-        public SortType SortType { get; set; }
-        public LanguageNames Language { get; set; }
+
+        public RepoSearchSort RepoSearchSort { get; set; }
+
+        public SortDirection SortDirection { get; set; }
+
+        public Language Language { get; set; }
+
     }
 }

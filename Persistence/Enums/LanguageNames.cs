@@ -1,4 +1,4 @@
-﻿namespace Persistence.Enums
+﻿namespace Application.Enums
 {
     public enum LanguageNames
     {

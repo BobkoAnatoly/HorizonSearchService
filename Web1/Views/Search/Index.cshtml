@@ -1,4 +1,4 @@
-﻿@model Persistence.Models.SearchModel
+﻿@model Application.Models.RepositorySearchModel
 
 
 <div class="main">
@@ -10,12 +10,12 @@
                         Languages
                     </p>
                     <div class="sort-lang__results">
-                        <input class="select__item" asp-for="l" type="submit" value="All" />
-                        <input class="select__item" asp-for="l" type="submit" value="Phyton" />
-                        <input class="select__item" asp-for="l" type="submit" value="JavaScript" />
-                        <input class="select__item" asp-for="l" type="submit" value="Java" />
-                        <input class="select__item" asp-for="l" type="submit" value="HTML" />
-                        <input class="select__item" asp-for="l" type="submit" value="CSharp"/>
+                        <input class="select__item" asp-for="Language" type="submit" value="All" />
+                        <input class="select__item" asp-for="Language" type="submit" value="Phyton" />
+                        <input class="select__item" asp-for="Language" type="submit" value="JavaScript" />
+                        <input class="select__item" asp-for="Language" type="submit" value="Java" />
+                        <input class="select__item" asp-for="Language" type="submit" value="HTML" />
+                        <input class="select__item" asp-for="Language" type="submit" value="CSharp"/>
                     </div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="form-body__search-util">
                     <div class="form-body__main-search">
                         <div class="search-bar">
-                            <input class="serach-bar-text" asp-for="q" placeholder="Search anything" type="text" />
+                            <input class="serach-bar-text" asp-for="SearchString" placeholder="Search anything" type="text" />
                             <button class="serach-bar-submit" type="submit">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                             </button>
@@ -31,7 +31,7 @@
                     </div>
                     <div class="form-body__results-sort">
                         <span class="select__header-text">Sort:</span>
-                        <select asp-for="s" class="select__header">
+                        <select asp-for="RepoSearchSort" class="select__header">
                             <option class="select__item" >Наилучшее соответствие</option>
                             <option class="select__item">Больше всего звёзд</option>
                             <option class="select__item">Меньше всего звёзд</option>
