@@ -1,5 +1,4 @@
 ﻿using Octokit;
-using Application.Enums;
 
 namespace Application.Models
 {
@@ -13,5 +12,8 @@ namespace Application.Models
 
         public Language Language { get; set; }
 
+        public int PerPage { get; set; } = 20;
+
+        public int Page { get; set; }
     }
 }

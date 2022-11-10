@@ -1,4 +1,7 @@
-﻿using System.Net;
+﻿using Application.Models;
+using HorizonSearchPlatform.Integration.Octokit;
+using Newtonsoft.Json;
+using System.Net;
 using System.Net.Sockets;
 using System.Text;
 
@@ -20,7 +23,7 @@ namespace HorizonSearchPlatform.Server
             return Listener;
         }
 
-        public void Process(object client)
+        public async void Process(object client)
         {
             
             NetworkStream stream = default;
@@ -44,9 +47,9 @@ namespace HorizonSearchPlatform.Server
 
                 string json = response.ToString();
 
-                //var query = JsonSerializer.Deserialize<ServerQuery>(json)!;
+                var query = JsonConvert.DeserializeObject<SearchRequest>(json)!;
 
-                //json = HandlerType.SearchType(query, _methodService);
+                json = await RepositoryHandler.GetRepositoriesAsync(query);
 
                 buffer = Encoding.Unicode.GetBytes(json);
                 stream.Write(buffer, 0, buffer.Length);

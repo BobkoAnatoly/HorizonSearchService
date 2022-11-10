@@ -4,6 +4,8 @@ using AutoMapper;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Application.Handlers;
+using Octokit;
+using Persistence.ViewModels;
 
 namespace Web.Controllers
 {
@@ -14,6 +16,7 @@ namespace Web.Controllers
         {
             _mapper = mapper;
         }
+
         [HttpGet]
         public IActionResult Index([FromQuery]RepositorySearchModel model)
         {
@@ -23,8 +26,15 @@ namespace Web.Controllers
 
             var jsonResponse = NetworkHandler.GetAsync(jsonQuery);
 
+            var response = JsonConvert.DeserializeObject<SearchRepositoryResult>(jsonResponse);
 
-            return View();
+            var resultView = _mapper.Map<List<RepositoryModel>>(response.Items);
+
+            int totalCount = response.TotalCount;
+            var pager = new Pager(totalCount,model.Page,model.PerPage);
+
+            this.ViewBag.Pager = pager;
+            return View(resultView);
         }
 
     }

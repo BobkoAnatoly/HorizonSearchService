@@ -1,5 +1,13 @@
 ﻿@model Application.Models.RepositorySearchModel
-
+@{
+    Pager pager = new Pager();
+    int pageNo = 0;
+    if (ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
 
 <div class="main">
     <div class="container">
@@ -15,7 +23,7 @@
                         <input class="select__item" asp-for="Language" type="submit" value="JavaScript" />
                         <input class="select__item" asp-for="Language" type="submit" value="Java" />
                         <input class="select__item" asp-for="Language" type="submit" value="HTML" />
-                        <input class="select__item" asp-for="Language" type="submit" value="CSharp"/>
+                        <input class="select__item" asp-for="Language" type="submit" value="CSharp" />
                     </div>
                 </div>
             </div>
@@ -32,7 +40,7 @@
                     <div class="form-body__results-sort">
                         <span class="select__header-text">Sort:</span>
                         <select asp-for="RepoSearchSort" class="select__header">
-                            <option class="select__item" >Наилучшее соответствие</option>
+                            <option class="select__item">Наилучшее соответствие</option>
                             <option class="select__item">Больше всего звёзд</option>
                             <option class="select__item">Меньше всего звёзд</option>
                             <option class="select__item">Недавно обновлённые</option>
@@ -70,108 +78,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div><div class="form-body__result">
-                        <div class="form-body__result-ico">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </div>
-                        <div class="form-body__result-body">
-                            <a class="result-body__result-link" href="#">Repository</a>
-                            <p class="result-body__result-about">Some repository description</p>
-                            <div class="form-body__result-info">
-                                <div class="result-info__stars">
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <span class="result-info__stars-count"></span>
-                                </div>
-                                <div class="result-info__lang">
-                                    <span class="result-info__lang-text">Java</span>
-                                </div>
-                                <div class="result-info__update">
-                                    <span class="result-info__update-text">Updated 5 days ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="form-body__result">
-                        <div class="form-body__result-ico">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </div>
-                        <div class="form-body__result-body">
-                            <a class="result-body__result-link" href="#">Repository</a>
-                            <p class="result-body__result-about">Some repository description</p>
-                            <div class="form-body__result-info">
-                                <div class="result-info__stars">
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <span class="result-info__stars-count"></span>
-                                </div>
-                                <div class="result-info__lang">
-                                    <span class="result-info__lang-text">Java</span>
-                                </div>
-                                <div class="result-info__update">
-                                    <span class="result-info__update-text">Updated 5 days ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="form-body__result">
-                        <div class="form-body__result-ico">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </div>
-                        <div class="form-body__result-body">
-                            <a class="result-body__result-link" href="#">Repository</a>
-                            <p class="result-body__result-about">Some repository description</p>
-                            <div class="form-body__result-info">
-                                <div class="result-info__stars">
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <span class="result-info__stars-count"></span>
-                                </div>
-                                <div class="result-info__lang">
-                                    <span class="result-info__lang-text">Java</span>
-                                </div>
-                                <div class="result-info__update">
-                                    <span class="result-info__update-text">Updated 5 days ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="form-body__result">
-                        <div class="form-body__result-ico">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </div>
-                        <div class="form-body__result-body">
-                            <a class="result-body__result-link" href="#">Repository</a>
-                            <p class="result-body__result-about">Some repository description</p>
-                            <div class="form-body__result-info">
-                                <div class="result-info__stars">
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <span class="result-info__stars-count"></span>
-                                </div>
-                                <div class="result-info__lang">
-                                    <span class="result-info__lang-text">Java</span>
-                                </div>
-                                <div class="result-info__update">
-                                    <span class="result-info__update-text">Updated 5 days ago</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div><div class="form-body__result">
-                        <div class="form-body__result-ico">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </div>
-                        <div class="form-body__result-body">
-                            <a class="result-body__result-link" href="#">Repository</a>
-                            <p class="result-body__result-about">Some repository description</p>
-                            <div class="form-body__result-info">
-                                <div class="result-info__stars">
-                                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                                    <span class="result-info__stars-count"></span>
-                                </div>
-                                <div class="result-info__lang">
-                                    <span class="result-info__lang-text">Java</span>
-                                </div>
-                                <div class="result-info__update">
-                                    <span class="result-info__update-text">Updated 5 days ago</span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
             </div>
         </form>
