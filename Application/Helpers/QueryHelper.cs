@@ -5,24 +5,23 @@ namespace Application.Helpers
 {
     public static class QueryHelper
     {
-        public static SortDirection DetectSortDirection(RepositorySearchModel request)
+        public static void DetectLanguage(ref SearchRequest request, RepositorySearchModel model)
         {
-            var predicate = request.RepoSearchSort.Split(' ').First();
-            if (predicate.Contains("Больше") || predicate.Contains("Недавно"))
+            switch (model.Language)
             {
-                return SortDirection.Descending;
+                case "Python": request.Language = Language.Python;
+                    break;
+                case "JavaScript": request.Language = Language.JavaScript;
+                    break;
+                case "Java": request.Language = Language.Java;
+                    break;
+                case "HTML": request.Language = Language.Http;
+                    break;
+                case "CSharp": request.Language = Language.CSharp;
+                    break;
+                default: request.Language = null;
+                    break;
             }
-            return SortDirection.Ascending;
         }
-        public static RepoSearchSort DetectSearchSort(RepositorySearchModel request)
-        {
-            var predicate = request.RepoSearchSort.Split(' ').First();
-            if (predicate.Contains("звёзд"))
-            {
-                return RepoSearchSort.Stars;
-            }
-            return RepoSearchSort.Updated;
-        }
-
     }
 }

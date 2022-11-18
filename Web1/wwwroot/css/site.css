@@ -189,7 +189,7 @@ a:hover i:after {
 .form-body {
     display: flex;
     padding-top: 40px;
-    gap: 130px;
+    gap: 90px;
 }
 
 .form-body__filters {
@@ -204,7 +204,7 @@ a:hover i:after {
     align-items: center;
     border-radius: 60px;
     padding: 10px 20px;
-    width: 500px;
+    width: 70vh;
 }
 
     .search-bar .serach-bar-text {
@@ -232,10 +232,6 @@ a:hover i:after {
 
 /*Search-bar-end*/
 
-.form-body__search-util {
-    display: flex;
-    gap: 20px;
-}
 
 .form-body__results-count h3 {
     font-size: 24px;
@@ -316,7 +312,6 @@ a:hover i:after {
 
 .select__item {
     display: block;
-    width: 100%;
     background: transparent;
     font-size: 16px;
     line-height: 24px;
@@ -350,6 +345,7 @@ a:hover i:after {
     transition: 0.2s;
     user-select: none;
     margin-bottom:20px;
+    width:90vh;
 }
 
     .form-body__result:hover {
@@ -382,4 +378,30 @@ a:hover i:after {
     font-size: 16px;
     color: #b0a1c7;
 }
-
+.pages{
+    list-style:none;
+    display:flex;
+    gap:5px;
+}
+.pages_item input{
+    display:block;
+    height:30px;
+    width:30px;
+    border-radius:10px;
+    border:none;
+    transition:.5s ease;
+}
+.pages_item input {
+    display: block;
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    border: none;
+    transition: .5s ease;
+}
+.sort-lang__results{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:20px;
+}

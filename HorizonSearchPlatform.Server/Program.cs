@@ -1,4 +1,6 @@
-﻿using HorizonSearchPlatform.Server;
+﻿using AutoMapper;
+using HorizonSearchPlatform.Server;
+using HorizonSearchPlatform.Server.Mapper;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,13 +20,11 @@ Log.Logger = new LoggerConfiguration()
 Log.Logger.Information("Server starting");
 
 var configuration = host.Services.GetService<IConfiguration>();
-
+var connectionClient = host.Services.GetService<ConnectionClient>();
 
 var address = configuration.GetSection("ConnectionInfo").Get<ConnectionAddress>();
 
-ConnectionClient connectionClient = new ConnectionClient(address);
-
-var listener = connectionClient.GetListener();
+var listener = connectionClient.GetListener(address);
 
 try
 {
@@ -51,10 +51,14 @@ finally
 
 IHost CreateHostBuilder(string[] args)
 {
+    var mapperConfiguration = new MapperConfiguration(
+        cf => cf.AddProfile(new MapperProfile()));
+    var mapper = mapperConfiguration.CreateMapper();
     return Host.CreateDefaultBuilder(args)
         .ConfigureServices((context, services) =>
         {
-
+            services.AddSingleton<ConnectionClient>();
+            services.AddSingleton(mapper);
         })
         .UseSerilog()
         .Build();

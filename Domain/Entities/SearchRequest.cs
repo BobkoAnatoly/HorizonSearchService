@@ -6,14 +6,10 @@ namespace Application.Models
     {
         public string SearchText { get; set; }
 
-        public RepoSearchSort RepoSearchSort { get; set; }
+        public Language? Language { get; set; }
 
-        public SortDirection SortDirection { get; set; }
+        public int PerPage = 20;
 
-        public Language Language { get; set; }
-
-        public int PerPage { get; set; } = 20;
-
-        public int Page { get; set; }
+        public int Page = 1;
     }
 }

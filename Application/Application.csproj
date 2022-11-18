@@ -15,9 +15,4 @@
     <ProjectReference Include="..\Persistence\Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\Contracts\" />
-    <Folder Include="Services\Implementation\" />
-  </ItemGroup>
-
 </Project>

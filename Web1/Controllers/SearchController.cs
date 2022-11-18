@@ -6,6 +6,9 @@ using Newtonsoft.Json.Converters;
 using Application.Handlers;
 using Octokit;
 using Persistence.ViewModels;
+using System.Reflection;
+using System.Text.Json;
+using Application.Helpers;
 
 namespace Web.Controllers
 {
@@ -18,23 +21,30 @@ namespace Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index([FromQuery]RepositorySearchModel model)
+        public IActionResult Index()
+        {
+
+            return View();
+        }
+        [HttpGet]
+        public  IActionResult Search([FromQuery] RepositorySearchModel model)
         {
             var request = _mapper.Map<SearchRequest>(model);
+            QueryHelper.DetectLanguage(ref request,model);
 
-            var jsonQuery = JsonConvert.SerializeObject(request,new StringEnumConverter());
+            var jsonQuery = JsonConvert.SerializeObject(request, new StringEnumConverter());
 
             var jsonResponse = NetworkHandler.GetAsync(jsonQuery);
 
-            var response = JsonConvert.DeserializeObject<SearchRepositoryResult>(jsonResponse);
-
-            var resultView = _mapper.Map<List<RepositoryModel>>(response.Items);
+            var response = System.Text.Json.JsonSerializer.Deserialize<SearchRepositoryResponseModel>(jsonResponse);
+            var resultView = _mapper.Map<List<RepositoryModel>>(response.Repositories);
 
             int totalCount = response.TotalCount;
-            var pager = new Pager(totalCount,model.Page,model.PerPage);
+            var pager = new Pager(totalCount, model.Page, model.PerPage);
 
             this.ViewBag.Pager = pager;
-            return View(resultView);
+            this.ViewBag.Result = resultView;
+            return View("Index");
         }
 
     }

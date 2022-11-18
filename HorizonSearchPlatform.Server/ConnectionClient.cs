@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using AutoMapper;
 using HorizonSearchPlatform.Integration.Octokit;
 using Newtonsoft.Json;
 using System.Net;
@@ -10,22 +11,21 @@ namespace HorizonSearchPlatform.Server
     public class ConnectionClient
     {
         private TcpListener Listener { get; set; }
-        public ConnectionAddress ConnectionAddress { get; private set; }
-
-        public ConnectionClient(ConnectionAddress сonnectionАddress)
+        private readonly IMapper _mapper;
+        public ConnectionClient(IMapper mapper)
         {
-            ConnectionAddress = сonnectionАddress;
+            _mapper = mapper;
         }
 
-        public TcpListener GetListener()
+        public TcpListener GetListener(ConnectionAddress connectionAddress)
         {
-            Listener = new TcpListener(IPAddress.Parse(ConnectionAddress.Ip), ConnectionAddress.Port);
+            Listener = new TcpListener(IPAddress.Parse(connectionAddress.Ip), connectionAddress.Port);
             return Listener;
         }
 
         public async void Process(object client)
         {
-            
+
             NetworkStream stream = default;
             var _tcpClient = client as TcpClient;
             try
@@ -48,8 +48,7 @@ namespace HorizonSearchPlatform.Server
                 string json = response.ToString();
 
                 var query = JsonConvert.DeserializeObject<SearchRequest>(json)!;
-
-                json = await RepositoryHandler.GetRepositoriesAsync(query);
+                json = await RepositoryHandler.GetRepositoriesAsync(query, _mapper);
 
                 buffer = Encoding.Unicode.GetBytes(json);
                 stream.Write(buffer, 0, buffer.Length);
