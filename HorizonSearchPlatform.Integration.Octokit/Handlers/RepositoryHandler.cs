@@ -13,7 +13,7 @@ namespace HorizonSearchPlatform.Integration.Octokit
         static RepositoryHandler()
         {
             _gitHubClient = new GitHubClient(new ProductHeaderValue("my-cool-app"));
-            _gitHubClient.Credentials = new Credentials("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");
+            _gitHubClient.Credentials = new Credentials("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");
         }
         public static async Task<string> GetRepositoriesAsync(SearchRequest request,IMapper mapper)
         {
@@ -21,7 +21,9 @@ namespace HorizonSearchPlatform.Integration.Octokit
             {
                 Language = request.Language,
                 Page = request.Page,
-                PerPage = request.PerPage
+                PerPage = request.PerPage,
+                SortField = RepoSearchSort.Stars,
+                Order = SortDirection.Descending,
             };
 
             var response =await _gitHubClient.Search.SearchRepo(query);

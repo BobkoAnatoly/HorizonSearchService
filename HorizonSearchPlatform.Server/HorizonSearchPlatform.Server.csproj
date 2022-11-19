@@ -27,10 +27,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Domain\Domain.csproj" />
     <ProjectReference Include="..\HorizonSearchPlatform.Integration.Octokit\HorizonSearchPlatform.Integration.Octokit.csproj" />
   </ItemGroup>

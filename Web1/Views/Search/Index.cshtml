@@ -19,8 +19,32 @@
                         <p class="sort-lang__text">
                             Languages
                         </p>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="All" />
+                        <div class="form_radio_btn">
+                            <input id="radio-1" type="radio" asp-for="Language" value="All" checked>
+                            <label for="radio-1">All</label>
+                        </div>
+                        <div class="form_radio_btn">
+                            <input id="radio-2" type="radio" asp-for="Language" value="Python">
+                            <label for="radio-2">Python</label>
+                        </div>
+                        <div class="form_radio_btn">
+                            <input id="radio-3" type="radio" asp-for="Language" value="JavaScript">
+                            <label for="radio-3">JavaScript</label>
+                        </div>
+                        <div class="form_radio_btn">
+                            <input id="radio-4" type="radio" asp-for="Language" value="Java">
+                            <label for="radio-4">Java</label>
+                        </div>
+                        <div class="form_radio_btn">
+                            <input id="radio-5" type="radio" asp-for="Language" value="HTML">
+                            <label for="radio-5">HTML</label>
+                        </div>
+                        <div class="form_radio_btn">
+                            <input id="radio-6" type="radio" asp-for="Language" value="CSharp">
+                            <label for="radio-6">CSharp</label>
+                        </div>
+                        @*<div class="sort-lang__results">
+                            <input class="select__item" asp-for="Language" type="radio" checked="checked" value="All" />
                             <span>All</span>
                         </div>
                         <div class="sort-lang__results">
@@ -42,7 +66,7 @@
                         <div class="sort-lang__results">
                             <input class="select__item" asp-for="Language" type="radio" value="CSharp" />
                             <span>CSharp</span>
-                        </div>
+                        </div>*@
                     </div>
                 </div>
                 <div class="form-body__main">
