@@ -27,14 +27,14 @@ namespace Web.Controllers
             return View();
         }
         [HttpGet]
-        public  IActionResult Search([FromQuery] RepositorySearchModel model)
+        public  async Task<IActionResult> Search([FromQuery] RepositorySearchModel model)
         {
             var request = _mapper.Map<SearchRequest>(model);
             QueryHelper.DetectLanguage(ref request,model);
 
             var jsonQuery = JsonConvert.SerializeObject(request, new StringEnumConverter());
 
-            var jsonResponse = NetworkHandler.GetAsync(jsonQuery);
+            var jsonResponse =await NetworkHandler.GetAsync(jsonQuery);
 
             var response = System.Text.Json.JsonSerializer.Deserialize<SearchRepositoryResponseModel>(jsonResponse);
             var resultView = _mapper.Map<List<RepositoryModel>>(response.Repositories);

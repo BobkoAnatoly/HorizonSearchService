@@ -44,29 +44,29 @@
                             <label for="radio-6">CSharp</label>
                         </div>
                         @*<div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" checked="checked" value="All" />
-                            <span>All</span>
-                        </div>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="Python" />
-                            <span>Python</span>
-                        </div>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="JavaScript" />
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="Java" />
-                            <span>Java</span>
-                        </div>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="HTML" />
-                            <span>HTML</span>
-                        </div>
-                        <div class="sort-lang__results">
-                            <input class="select__item" asp-for="Language" type="radio" value="CSharp" />
-                            <span>CSharp</span>
-                        </div>*@
+                    <input class="select__item" asp-for="Language" type="radio" checked="checked" value="All" />
+                    <span>All</span>
+                    </div>
+                    <div class="sort-lang__results">
+                    <input class="select__item" asp-for="Language" type="radio" value="Python" />
+                    <span>Python</span>
+                    </div>
+                    <div class="sort-lang__results">
+                    <input class="select__item" asp-for="Language" type="radio" value="JavaScript" />
+                    <span>JavaScript</span>
+                    </div>
+                    <div class="sort-lang__results">
+                    <input class="select__item" asp-for="Language" type="radio" value="Java" />
+                    <span>Java</span>
+                    </div>
+                    <div class="sort-lang__results">
+                    <input class="select__item" asp-for="Language" type="radio" value="HTML" />
+                    <span>HTML</span>
+                    </div>
+                    <div class="sort-lang__results">
+                    <input class="select__item" asp-for="Language" type="radio" value="CSharp" />
+                    <span>CSharp</span>
+                    </div>*@
                     </div>
                 </div>
                 <div class="form-body__main">
@@ -121,9 +121,16 @@
                         @if (pager.TotalPages > 0)
                         {
                             <ul class="pages">
-                                @for (var page = pager.StartPage; page < pager.EndPage; page++)
+                                @if (pager.CurrentPage > pager.TotalPages)
                                 {
                                     <li class="pages_item">
+                                        <input asp-controller="Search" asp-for="Page" asp-action="Search" asp-route-pg="@(pager.CurrentPage)" type="submit" value="@(pager.CurrentPage+1)">
+                                    </li>
+
+                                }
+                                @for (var page = pager.StartPage; page < pager.EndPage; page++)
+                                {
+                                    <li class="pages_item @(page==pager.CurrentPage ? "active" :"")">
                                         <input asp-controller="Search" asp-for="Page" asp-action="Search" asp-route-pg="@(page)" type="submit" value="@(page)">
                                     </li>
                                 }

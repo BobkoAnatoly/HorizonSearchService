@@ -5,7 +5,7 @@ namespace Application.Handlers
 {
     public static class NetworkHandler
     {
-        public static string GetAsync(string jsonQuery)
+        public static async Task<string> GetAsync(string jsonQuery)
         {
             TcpClient? client = null;
 
